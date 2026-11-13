@@ -13,7 +13,7 @@ public:
 
     void playGame();
 
-    void displayRules();
+    static void displayRules();
 };
 
 

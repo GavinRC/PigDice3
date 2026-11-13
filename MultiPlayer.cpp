@@ -15,11 +15,10 @@ MultiPlayer::MultiPlayer(int numPlayers) {
         PDGameV2 player(playerName);
         m_players.push_back(player);
     }
-
-    m_players[1].displayRules();
 }
 
 void MultiPlayer::mpPlayGame() {
+    PDGameV2::displayRules();
     while (!m_gameOver) {
         for (auto& player : m_players) {
             player.playGame();
@@ -39,14 +38,12 @@ void MultiPlayer::displayScoreboard() {
 void MultiPlayer::checkForWinner() {
     const PDGameV2* winner = nullptr;
     for (const auto& player : m_players) {
-        if (player.getGameScore() >= 50 &&
-            (winner == nullptr || player.getGameScore() > winner->getGameScore())) {
+        if (player.getGameScore() >= 50 && (winner == nullptr || player.getGameScore() > winner->getGameScore())) {
             winner = &player;
-            }
+        }
     }
     if (winner != nullptr) {
-        std::cout << "Congratulations! " << winner->getPlayerName()
-                  << " you win with a score of " << winner->getGameScore() << std::endl;
+        std::cout << "Congratulations! " << winner->getPlayerName() << " you win with a score of " << winner->getGameScore() << std::endl;
         m_gameOver = true;
     }
 }

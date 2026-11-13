@@ -1,7 +1,3 @@
-//
-// Created by gavin on 10/6/2026.
-//
-
 #ifndef PIGDICE_TURN_H
 #define PIGDICE_TURN_H
 #include "DIE.h"

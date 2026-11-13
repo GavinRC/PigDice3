@@ -1,7 +1,7 @@
 #ifndef PIGDICE3_MULTIPLAYER_H
 #define PIGDICE3_MULTIPLAYER_H
 #include <vector>
-#include "PDgameV2.h"
+#include "PDGameV2.h"
 class MultiPlayer {
 
 private:
